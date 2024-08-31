@@ -31,12 +31,13 @@ echo "export UNION_PORT="23"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# download binary
+**download binary**
+```
 cd $HOME
 wget -O uniond https://testnet-files.itrocket.net/union/uniond
 chmod +x uniond
 mv uniond $HOME/go/bin/
-
+```
 # config and init app
 uniond --home $HOME/.union init $MONIKER --chain-id union-testnet-8
 
