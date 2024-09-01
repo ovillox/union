@@ -38,8 +38,11 @@ wget -O uniond https://testnet-files.itrocket.net/union/uniond
 chmod +x uniond
 mv uniond $HOME/go/bin/
 ```
-# config and init app
+
+**config and init app**
+```
 uniond --home $HOME/.union init $MONIKER --chain-id union-testnet-8
+```
 
 # download genesis and addrbook
 wget -O $HOME/.union/config/genesis.json https://server-4.itrocket.net/testnet/union/genesis.json
