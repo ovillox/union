@@ -44,16 +44,19 @@ mv uniond $HOME/go/bin/
 uniond --home $HOME/.union init $MONIKER --chain-id union-testnet-8
 ```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.union/config/genesis.json https://server-4.itrocket.net/testnet/union/genesis.json
 wget -O $HOME/.union/config/addrbook.json  https://server-4.itrocket.net/testnet/union/addrbook.json
+```
 
-# set seeds and peers
+**set seeds and peers**
+```
 SEEDS="2812a4ae3ebfba02973535d05d2bbcc80b7d215f@union-testnet-seed.itrocket.net:23656"
 PEERS="a05dde8737e66c99260edfd45180055fe7f8bd9d@union-testnet-peer.itrocket.net:23656,571b775d217d2e56cd9914134513c14507e30b5b@188.40.126.219:26656,7314fd2235940db754af316446869af4ef2ffe5c@65.108.40.246:26656,71b1273c3e944fc9df0c0d39fe53931ed12b7674@65.108.131.146:27101,9fa3e7248de4dc1f639e0d89470bf443d4a427ba@65.109.113.233:24656,d513bc19be599c2de8fcde0d7b4c997fc5e7b197@65.109.126.24:26671,c51587b3d222faa9a13c0354ec87cdc2902ce987@198.244.179.173:26656,5f498ea2735387e31c5076ea54b1463138d9755f@185.165.170.147:26656,082d00f596f1823041ec8ad570e7da3af4c2c4bd@62.171.160.155:26656,c778da65696e032ff92375c9b3a296d54fa89126@195.201.245.178:56076,19ae23577b8ad3c99e293dfb2d32ba20fdb15d04@95.217.196.224:17156,13abf5bb34c6811514a07855364132b03ad05b3d@93.190.140.5:26656"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.union/config/config.toml
-
+```
 
 # set custom ports in app.toml
 sed -i.bak -e "s%:1317%:${UNION_PORT}317%g;
