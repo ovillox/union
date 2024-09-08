@@ -79,10 +79,12 @@ s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${UNION_POR
 s%:26660%:${UNION_PORT}660%g" $HOME/.union/config/config.toml
 ```
 
-# config pruning
+**config pruning**
+```
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.union/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.union/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.union/config/app.toml
+```
 
 # set minimum gas price, enable prometheus and disable indexing
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.0muno"|g' $HOME/.union/config/app.toml
