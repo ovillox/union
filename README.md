@@ -121,12 +121,14 @@ if curl -s --head curl https://server-4.itrocket.net/testnet/union/union_2024-08
 fi
 ```
 
-# enable and start service
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable uniond
 sudo systemctl restart uniond && sudo journalctl -u uniond -f
 Automatic Installation
 pruning: custom: 100/0/10 | indexer: null
+```
 
 source <(curl -s https://itrocket.net/api/testnet/union/autoinstall/)
 Create wallet
