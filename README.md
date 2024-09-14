@@ -128,9 +128,8 @@ sudo systemctl enable uniond
 sudo systemctl restart uniond && sudo journalctl -u uniond -f
 Automatic Installation
 pruning: custom: 100/0/10 | indexer: null
-```
-
 source <(curl -s https://itrocket.net/api/testnet/union/autoinstall/)
+```
 Create wallet
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 uniond keys add $WALLET
