@@ -136,8 +136,10 @@ source <(curl -s https://itrocket.net/api/testnet/union/autoinstall/)
 uniond keys add $WALLET
 ```
 
-# to restore exexuting wallet, use the following command
+**to restore exexuting wallet, use the following command**
+```
 uniond keys add $WALLET --recover
+```
 
 # save wallet and validator address
 WALLET_ADDRESS=$(uniond keys show $WALLET -a)
