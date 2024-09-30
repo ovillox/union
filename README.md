@@ -183,10 +183,12 @@ sudo ufw allow ${UNION_PORT}656/tcp
 sudo ufw enable
 ```
 
-Delete node
+**Delete node**
+```
 sudo systemctl stop uniond
 sudo systemctl disable uniond
 sudo rm -rf /etc/systemd/system/uniond.service
 sudo rm $(which uniond)
 sudo rm -rf $HOME/.union
 sed -i "/UNION_/d" $HOME/.bash_profile
+```
